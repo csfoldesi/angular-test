@@ -54,6 +54,6 @@ https://v17.material.angular.io/guide/getting-started
 
 
 ## Use Environments
-`ng add @ngx-env/builder`
+`ng add @ngx-env/builder@17`
 
 .env, env.d.ts
