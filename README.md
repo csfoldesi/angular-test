@@ -1,27 +1,59 @@
-# Test
+# Angular17 base
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.15.
+## For better component generating
+In angular.json:
 
-## Development server
+```json
+"schematics": {
+    "@schematics/angular": {
+        "component": {
+        "inlineTemplate": true,
+        "inlineStyle": true,
+        "skipTests": true,
+        "flat": true
+        }
+    }
+},
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Add ngxtension
+`npm install -D ngxtension-plugin`
 
-## Code scaffolding
+## Add tailwind
+`npm install -D tailwindcss@3 postcss autoprefixer`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npx tailwindcss init`
 
-## Build
+tailwind.config.js:
+```json
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+styles.css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-## Running unit tests
+https://v3.tailwindcss.com/docs/guides/angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Angular Material
+`ng add @angular/material@17`
 
-## Running end-to-end tests
+https://v17.material.angular.io/guide/getting-started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Use Environments
+`ng add @ngx-env/builder`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+.env, env.d.ts
