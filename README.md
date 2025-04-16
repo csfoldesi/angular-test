@@ -1,4 +1,4 @@
-# Angular17 base
+# Angular Test Project
 
 ## For better component generating
 In angular.json:
@@ -18,6 +18,8 @@ In angular.json:
 
 ## Add ngxtension
 `npm install -D ngxtension-plugin`
+
+`ng g ngxtension-plugin:init`
 
 ## Add tailwind
 `npm install -D tailwindcss@3 postcss autoprefixer`
@@ -57,3 +59,38 @@ https://v17.material.angular.io/guide/getting-started
 `ng add @ngx-env/builder@17`
 
 .env, env.d.ts
+
+
+## Set Local proxy
+proxy.conf.json:
+
+```json
+{
+  "/picsum": {
+    "target": "https://picsum.photos",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/picsum": ""
+    }
+  }
+}
+```
+
+
+angular.json:
+
+```json
+{
+  "projects": {
+    "angular-lms": {
+      "architect": {
+        "serve": {
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          }
+        }
+      }
+    }
+  }
+}

@@ -73,7 +73,10 @@
               "buildTarget": "test:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          }          
         },
         "extract-i18n": {
           "builder": "@ngx-env/builder:extract-i18n",
