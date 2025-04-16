@@ -26,6 +26,10 @@ export const routes: Routes = [
     loadComponent: () => import('./images/images.component'),
   },
   {
+    path: 'reddit',
+    loadComponent: () => import('./reddit/reddit.component'),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

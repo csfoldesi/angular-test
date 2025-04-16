@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
@@ -29,12 +30,13 @@ import { RouterModule } from '@angular/router';
           Log In
         </button>
       </p>
+      <p>
+        <button mat-flat-button color="primary" routerLink="/reddit">
+          Go to Reddit
+        </button>
+      </p>
     </div>
   `,
   styles: ``,
 })
-export default class HomeComponent {
-  constructor() {
-    console.log(import.meta.env.NG_APP_API_URL);
-  }
-}
+export default class HomeComponent {}
